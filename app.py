@@ -38,4 +38,4 @@ def type_data(type,centiare,Angle,Azimuth):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='34.87.20.64', port=5001, threaded=True)
+    app.run(debug=False, host='0.0.0.0', port=5001, threaded=True)
