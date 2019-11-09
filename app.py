@@ -12,24 +12,53 @@ def type_data(type,centiare,Angle,Azimuth):
         if type=='highEfficiency':
             centiaredic = dict_json['high efficiency']
             typeDic = centiaredic[centiare]
-            t1 = json.dumps(typeDic['Tilt Angle: '+Angle+' deg, Azimuth: '+Azimuth+' deg'], ensure_ascii=False)
+            dic = typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg']
+
+            dic['Annual AC system energy (KWh)'] = round(dic['Annual AC system energy (KWh)'])
+            dic['Annual DC energy (KWh)'] = round(dic['Annual DC energy (KWh)'])
+            dic['Final yield (KWh/kW)'] = round(dic['Final yield (KWh/kW)'])
+            dic['Annual return(HK$)'] = round(dic['Annual return(HK$)'])
+
+            t1 = json.dumps(dic,
+                            ensure_ascii=False)
             return  t1
         elif type=='lowEfficiency':
             centiaredic = dict_json['low efficiency']
             typeDic = centiaredic[centiare]
-            t1 = json.dumps(typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg'],
+            dic = typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg']
+
+            dic['Annual AC system energy (KWh)'] = round(dic['Annual AC system energy (KWh)'])
+            dic['Annual DC energy (KWh)'] = round(dic['Annual DC energy (KWh)'])
+            dic['Final yield (KWh/kW)'] = round(dic['Final yield (KWh/kW)'])
+            dic['Annual return(HK$)'] = round(dic['Annual return(HK$)'])
+
+            t1 = json.dumps(dic,
                             ensure_ascii=False)
             return t1
         elif type=='monocrystalline':
             centiaredic = dict_json['monocrystalline']
             typeDic = centiaredic[centiare]
-            t1 = json.dumps(typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg'],
+            dic = typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg']
+
+            dic['Annual AC system energy (KWh)'] = round(dic['Annual AC system energy (KWh)'])
+            dic['Annual DC energy (KWh)'] = round(dic['Annual DC energy (KWh)'])
+            dic['Final yield (KWh/kW)'] = round(dic['Final yield (KWh/kW)'])
+            dic['Annual return(HK$)'] = round(dic['Annual return(HK$)'])
+
+            t1 = json.dumps(dic,
                             ensure_ascii=False)
             return t1
         else:
             centiaredic = dict_json['polycrystalline Ted']
             typeDic = centiaredic[centiare]
-            t1 = json.dumps(typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg'],
+            dic = typeDic['Tilt Angle: ' + Angle + ' deg, Azimuth: ' + Azimuth + ' deg']
+
+            dic['Annual AC system energy (KWh)'] = round(dic['Annual AC system energy (KWh)'])
+            dic['Annual DC energy (KWh)'] = round(dic['Annual DC energy (KWh)'])
+            dic['Final yield (KWh/kW)'] = round(dic['Final yield (KWh/kW)'])
+            dic['Annual return(HK$)'] = round(dic['Annual return(HK$)'])
+
+            t1 = json.dumps(dic,
                             ensure_ascii=False)
             return t1
 
@@ -38,4 +67,4 @@ def type_data(type,centiare,Angle,Azimuth):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5001, threaded=True)
+    app.run(debug=False, host='34.87.20.64', port=5001, threaded=True)
